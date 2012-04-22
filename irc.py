@@ -1,7 +1,7 @@
 import socket
 import json
 
-class IRCConfig:
+class Config:
     def __init__(self, cfgname):
         self._rawcfg = json.loads(open(cfgname).read())
 
@@ -15,7 +15,7 @@ class IRCConfig:
         return self._rawcfg['servers']
 
 
-class IRCParser:
+class Parser:
     def parse_normal(self, line):
         """Parse line as a normal IRC message"""
         return
@@ -29,7 +29,7 @@ class IRCParser:
         return
 
 
-class IRCManager:
+class Manager:
     def __init__(self, cfg):
         self._config = cfg
         self._bots = []
@@ -43,7 +43,7 @@ class IRCManager:
         return
 
 
-class IRCBot:
+class Bot:
     def __init__(self, nick, user):
         self._socket = socket.socket()
         self._parser = IRCParser()
