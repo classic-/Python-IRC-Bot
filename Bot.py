@@ -21,4 +21,8 @@ class Bot(object):
         while True:
             s = bot.recv(socket_buffer)
             
-            
+            if s.startswith(":"):
+                s = s[:1]
+                
+            if s.startswith("PING"):
+                bot.send(s.replace("PING", "PONG"))
