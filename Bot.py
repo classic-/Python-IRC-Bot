@@ -26,3 +26,11 @@ class Bot(object):
                 
             if s.startswith("PING"):
                 bot.send(s.replace("PING", "PONG"))
+                
+    def ParseData(self, data):
+        s = data.split(':')
+        s1 = s[0].split(' ')
+        sender = s1[0]
+        command_type = s1[1]
+        channel = s1[1]
+        arguments = s[1]
