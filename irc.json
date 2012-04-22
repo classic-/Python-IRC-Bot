@@ -1,0 +1,11 @@
+{
+    "user": "BOT",
+    "nick": "BOT",
+    "servers":
+    [
+        {
+            "server": "irc.strictfp.net",
+            "port": 6667
+        }
+    ]
+}
